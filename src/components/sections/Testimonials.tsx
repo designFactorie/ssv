@@ -106,18 +106,20 @@ export default function Testimonials() {
           </AnimatePresence>
 
           {/* Navigation dots */}
-          <div className="flex items-center justify-center gap-3 mt-8">
+          <div className="flex items-center justify-center gap-2 mt-8">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
-                className={`transition-all duration-300 rounded-full ${
+                className="relative flex items-center justify-center w-11 h-11"
+                aria-label={`View testimonial ${i + 1}`}
+              >
+                <span className={`block transition-all duration-300 rounded-full ${
                   i === activeIndex
                     ? "w-10 h-3 bg-gradient-to-r from-saffron to-magenta"
-                    : "w-3 h-3 bg-navy/15 hover:bg-navy/30"
-                }`}
-                aria-label={`View testimonial ${i + 1}`}
-              />
+                    : "w-3 h-3 bg-navy/15"
+                }`} />
+              </button>
             ))}
           </div>
         </div>

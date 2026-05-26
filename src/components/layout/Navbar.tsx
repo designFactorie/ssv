@@ -84,7 +84,7 @@ export default function Navbar() {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden relative w-10 h-10 flex items-center justify-center"
+              className="md:hidden relative w-11 h-11 flex items-center justify-center"
               aria-label="Toggle menu"
             >
               <div className="flex flex-col gap-1.5">

@@ -225,7 +225,7 @@ export default function ProgramsPage() {
                           <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className={`px-6 py-2.5 bg-gradient-to-r ${program.color} text-white font-heading font-semibold text-sm rounded-xl shadow-md`}
+                            className={`px-6 py-3 min-h-[44px] bg-gradient-to-r ${program.color} text-white font-heading font-semibold text-sm rounded-xl shadow-md`}
                           >
                             Enquire Now
                           </motion.button>

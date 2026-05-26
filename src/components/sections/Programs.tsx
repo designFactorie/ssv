@@ -124,7 +124,7 @@ export default function ProgramsSection() {
                     <h3 className="font-heading font-bold text-xl text-navy group-hover:text-white transition-colors">
                       {program.title}
                     </h3>
-                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/80 text-navy/60 group-hover:bg-white/20 group-hover:text-white/80 transition-colors">
+                    <span className="text-[13px] font-semibold px-2.5 py-1 rounded-full bg-white/80 text-navy/60 group-hover:bg-white/20 group-hover:text-white/80 transition-colors">
                       {program.age}
                     </span>
                   </div>

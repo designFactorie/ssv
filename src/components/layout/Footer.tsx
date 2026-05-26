@@ -85,12 +85,12 @@ export default function Footer() {
                 <h4 className="font-heading font-semibold text-base mb-5 text-saffron-light">
                   {title}
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-1">
                   {links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-white/50 hover:text-white text-sm transition-colors hover:translate-x-1 inline-block"
+                        className="text-white/50 hover:text-white text-sm transition-colors hover:translate-x-1 inline-block py-2"
                       >
                         {link.label}
                       </Link>

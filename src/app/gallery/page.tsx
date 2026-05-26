@@ -79,7 +79,7 @@ export default function GalleryPage() {
                 onClick={() => setActiveCategory(cat)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-5 py-2 rounded-full font-heading font-medium text-sm transition-all duration-300 ${
+                className={`px-5 py-2.5 min-h-[44px] rounded-full font-heading font-medium text-sm transition-all duration-300 ${
                   activeCategory === cat
                     ? "bg-gradient-to-r from-saffron to-magenta text-white shadow-lg shadow-saffron/20"
                     : "bg-cream text-navy/60 hover:bg-cream-dark"
@@ -93,7 +93,7 @@ export default function GalleryPage() {
           {/* Masonry Grid */}
           <motion.div
             layout
-            className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
+            className="columns-2 lg:columns-3 gap-3 sm:gap-4 space-y-3 sm:space-y-4"
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((item, i) => (
