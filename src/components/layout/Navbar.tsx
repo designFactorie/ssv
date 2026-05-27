@@ -40,7 +40,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <motion.div
-                className="w-[72px] h-[72px] relative shrink-0"
+                className="w-12 h-12 sm:w-[72px] sm:h-[72px] relative shrink-0"
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -52,11 +52,11 @@ export default function Navbar() {
                   sizes="72px"
                 />
               </motion.div>
-              <div className="hidden sm:block">
-                <h1 className="font-heading font-bold text-lg leading-tight text-navy">
+              <div>
+                <h1 className="font-heading font-bold text-sm sm:text-lg leading-tight text-navy">
                   Sairam Sanskruthi
                 </h1>
-                <p className="text-xs text-navy/60 font-medium tracking-wide">
+                <p className="text-[10px] sm:text-xs text-navy/60 font-medium tracking-wide">
                   VIDHYALAYA
                 </p>
               </div>
