@@ -6,7 +6,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/M
 
 const programs = [
   {
-    title: "Nursery",
+    title: "Play Group",
     age: "2 - 3 years",
     description:
       "A gentle introduction to structured play and social interaction in a warm, safe environment.",
@@ -20,8 +20,9 @@ const programs = [
     ),
   },
   {
-    title: "Play School",
+    title: "Nursery",
     age: "3 - 4 years",
+    concept: { sanskrit: "Eksha", meaning: "Desire to Learn" },
     description:
       "Learning through play with creative activities, storytelling, music, and art exploration.",
     color: "from-magenta to-magenta-light",
@@ -34,22 +35,9 @@ const programs = [
     ),
   },
   {
-    title: "Day Care",
-    age: "2 - 6 years",
-    description:
-      "Extended care with balanced activities, nutritious meals, and rest time for working parents.",
-    color: "from-teal to-teal-light",
-    bgColor: "bg-teal/5",
-    borderColor: "border-teal/20",
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-      </svg>
-    ),
-  },
-  {
     title: "LKG",
     age: "4 - 5 years",
+    concept: { sanskrit: "Medha", meaning: "Intelligence" },
     description:
       "Building foundational literacy, numeracy, and social skills through interactive and engaging methods.",
     color: "from-purple to-purple-light",
@@ -64,6 +52,7 @@ const programs = [
   {
     title: "UKG",
     age: "5 - 6 years",
+    concept: { sanskrit: "Prajna", meaning: "Wisdom" },
     description:
       "Preparing confident learners for primary school with advanced reading, writing, and critical thinking.",
     color: "from-green to-green-light",
@@ -72,6 +61,20 @@ const programs = [
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Day Care",
+    age: "2 - 12 years",
+    description:
+      "Extended care with balanced activities, nutritious meals, and rest time for working parents.",
+    color: "from-teal to-teal-light",
+    bgColor: "bg-teal/5",
+    borderColor: "border-teal/20",
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
       </svg>
     ),
   },
@@ -128,6 +131,17 @@ export default function ProgramsSection() {
                       {program.age}
                     </span>
                   </div>
+
+                  {"concept" in program && program.concept && (
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="font-heading font-bold text-base italic text-navy/80 group-hover:text-white transition-colors">
+                        {program.concept.sanskrit}
+                      </span>
+                      <span className="text-xs text-navy/40 group-hover:text-white/60 transition-colors">
+                        — {program.concept.meaning}
+                      </span>
+                    </div>
+                  )}
 
                   <p className="text-navy/60 text-sm leading-relaxed group-hover:text-white/80 transition-colors mb-6">
                     {program.description}

@@ -6,11 +6,11 @@ import { FadeIn } from "@/components/animations/MotionWrapper";
 import { Mandala } from "@/components/ui/ShapeDecorations";
 
 const programOptions = [
-  "Nursery (2-3 years)",
-  "Play School (3-4 years)",
-  "Day Care (2-6 years)",
+  "Play Group (2-3 years)",
+  "Nursery (3-4 years)",
   "LKG (4-5 years)",
   "UKG (5-6 years)",
+  "Day Care (2-12 years)",
 ];
 
 export default function ContactPage() {
@@ -56,7 +56,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-navy/60 text-lg leading-relaxed">
               Come see our campus, meet our teachers, and experience the Sairam
-              Samskruthi difference firsthand. We&apos;d love to welcome you!
+              Sanskruthi difference firsthand. We&apos;d love to welcome you!
             </p>
           </FadeIn>
         </div>
@@ -266,7 +266,7 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium text-navy text-sm">Address</p>
                       <p className="text-navy/55 text-sm">
-                        Sairam Samskruthi Vidhyalaya,
+                        Sairam Sanskruthi Vidhyalaya,
                         <br />
                         Appa Garden, Bangalore,
                         <br />
@@ -296,7 +296,7 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium text-navy text-sm">Email</p>
                       <p className="text-navy/55 text-sm">
-                        info@sairamsamskruthi.com
+                        info@sairamsanskruthi.com
                       </p>
                     </div>
                   </div>

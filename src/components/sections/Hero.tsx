@@ -1,32 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FloatingShapes, Mandala } from "@/components/ui/ShapeDecorations";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cream">
-      {/* Background pattern */}
-      <div className="absolute inset-0 pattern-rangoli" />
-
-      {/* Mandala decoration */}
-      <div className="absolute -right-24 -top-24 opacity-30">
-        <Mandala size={400} />
-      </div>
-      <div className="absolute -left-16 -bottom-16 opacity-20">
-        <Mandala size={300} />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/SSV-building.jpeg"
+        alt="Sairam Sanskruthi Vidhyalaya building"
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-navy/60" />
+      {/* Gradient overlay for color */}
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-transparent to-navy/50" />
 
       {/* Floating shapes */}
       <FloatingShapes />
 
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-saffron/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-teal/8 rounded-full blur-3xl" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div
@@ -37,7 +36,7 @@ export default function Hero() {
           >
             <span className="w-2 h-2 rounded-full bg-green animate-pulse" />
             <span className="text-sm font-medium text-navy/70">
-              Admissions Open for 2025-26
+              Admissions Open for 2026-27
             </span>
           </motion.div>
 
@@ -48,10 +47,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <span className="text-navy">Where </span>
+            <span className="text-white">Where </span>
             <span className="gradient-text">Play</span>
             <br />
-            <span className="text-navy">Meets </span>
+            <span className="text-white">Meets </span>
             <motion.span
               className="gradient-text-teal inline-block"
               animate={{ rotate: [0, -2, 2, 0] }}
@@ -90,11 +89,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="text-lg sm:text-xl text-navy/60 max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
             A premium kindergarten nurturing young minds through{" "}
-            <span className="text-saffron font-semibold">play-based learning</span> and{" "}
-            <span className="text-purple font-semibold">rich cultural values</span> in
+            <span className="text-saffron-light font-semibold">play-based learning</span> and{" "}
+            <span className="text-purple-light font-semibold">rich cultural values</span> in
             the heart of Bangalore.
           </motion.p>
 
@@ -118,7 +117,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/80 backdrop-blur-sm text-navy font-heading font-semibold text-lg rounded-2xl border-2 border-navy/10 hover:border-saffron/30 transition-colors"
+                className="px-8 py-4 bg-white/15 backdrop-blur-sm text-white font-heading font-semibold text-lg rounded-2xl border-2 border-white/30 hover:bg-white/25 transition-colors"
               >
                 Explore Programs
               </motion.button>
@@ -133,20 +132,20 @@ export default function Hero() {
             className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6"
           >
             {[
-              { number: "500+", label: "Happy Students", color: "text-saffron" },
-              { number: "15+", label: "Years of Trust", color: "text-purple" },
-              { number: "50+", label: "Trained Teachers", color: "text-teal" },
-              { number: "100%", label: "Parent Satisfaction", color: "text-green" },
+              { number: "500+", label: "Happy Students", color: "text-saffron-light" },
+              { number: "15+", label: "Years of Trust", color: "text-purple-light" },
+              { number: "50+", label: "Trained Teachers", color: "text-teal-light" },
+              { number: "100%", label: "Parent Satisfaction", color: "text-green-light" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
                 whileHover={{ y: -5 }}
-                className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-white shadow-sm"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20"
               >
                 <div className={`font-heading font-bold text-3xl sm:text-4xl ${stat.color}`}>
                   {stat.number}
                 </div>
-                <div className="text-navy/50 text-sm font-medium mt-1">
+                <div className="text-white/50 text-sm font-medium mt-1">
                   {stat.label}
                 </div>
               </motion.div>
@@ -156,7 +155,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0 z-0">
         <svg
           viewBox="0 0 1440 120"
           className="w-full h-auto"

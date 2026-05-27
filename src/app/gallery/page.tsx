@@ -9,28 +9,39 @@ import { Mandala } from "@/components/ui/ShapeDecorations";
 const categories = ["All", "Campus", "Classroom", "Play Area", "Activities", "Celebrations"];
 
 const galleryItems = [
+  // Campus
   { id: 1, category: "Campus", title: "Our Vibrant School Building", src: "/SSV_images/IMG-20260522-WA0109.jpg", aspect: "aspect-[4/3]" },
-  { id: 2, category: "Activities", title: "Children Playing Outdoors", src: "/SSV_images/IMG-20260522-WA0108.jpg", aspect: "aspect-[4/3]" },
-  { id: 3, category: "Classroom", title: "Colorful Classroom Setup", src: "/SSV_images/IMG-20260522-WA0063.jpg", aspect: "aspect-[4/3]" },
-  { id: 4, category: "Play Area", title: "Indoor Play Zone", src: "/SSV_images/IMG-20260522-WA0014.jpg", aspect: "aspect-[4/3]" },
-  { id: 5, category: "Celebrations", title: "Annual Day Celebration", src: "/SSV_images/IMG-20260522-WA0054.jpg", aspect: "aspect-[3/4]" },
-  { id: 6, category: "Activities", title: "Happy Kids Waving", src: "/SSV_images/IMG-20260526-WA0021.jpg", aspect: "aspect-[4/3]" },
-  { id: 7, category: "Play Area", title: "Colorful Ball Pit", src: "/SSV_images/IMG-20260522-WA0012.jpg", aspect: "aspect-[4/3]" },
-  { id: 8, category: "Classroom", title: "Learning in Action", src: "/SSV_images/IMG-20260526-WA0005.jpg", aspect: "aspect-[4/3]" },
-  { id: 9, category: "Play Area", title: "Outdoor Playground", src: "/SSV_images/IMG-20260522-WA0024.jpg", aspect: "aspect-[4/3]" },
-  { id: 10, category: "Celebrations", title: "Classroom Decorations", src: "/SSV_images/IMG-20260522-WA0074.jpg", aspect: "aspect-[3/4]" },
-  { id: 11, category: "Classroom", title: "Classroom with Colorful Benches", src: "/SSV_images/IMG-20260522-WA0115.jpg", aspect: "aspect-[4/3]" },
-  { id: 12, category: "Activities", title: "Kids Playing on Swings", src: "/SSV_images/IMG-20260522-WA0114.jpg", aspect: "aspect-[4/3]" },
-  { id: 13, category: "Play Area", title: "Lego Wall Station", src: "/SSV_images/IMG-20260522-WA0060.jpg", aspect: "aspect-[4/3]" },
-  { id: 14, category: "Activities", title: "Alphabet Learning Session", src: "/SSV_images/IMG-20260526-WA0008.jpg", aspect: "aspect-[4/3]" },
-  { id: 15, category: "Classroom", title: "Full Classroom View", src: "/SSV_images/IMG-20260522-WA0070.jpg", aspect: "aspect-[4/3]" },
-  { id: 16, category: "Play Area", title: "Crocodile Activity Board", src: "/SSV_images/IMG-20260522-WA0035.jpg", aspect: "aspect-[3/4]" },
   { id: 17, category: "Campus", title: "School Building Side View", src: "/SSV_images/IMG-20260522-WA0110.jpg", aspect: "aspect-[4/3]" },
+  // Classroom & Learning
+  { id: 3, category: "Classroom", title: "Colorful Classroom Setup", src: "/SSV_images/IMG-20260522-WA0063.jpg", aspect: "aspect-[4/3]" },
+  { id: 8, category: "Classroom", title: "Learning in Action", src: "/SSV_images/IMG-20260526-WA0005.jpg", aspect: "aspect-[4/3]" },
+  { id: 11, category: "Classroom", title: "Classroom with Colorful Benches", src: "/SSV_images/IMG-20260522-WA0115.jpg", aspect: "aspect-[4/3]" },
+  { id: 15, category: "Classroom", title: "Full Classroom View", src: "/SSV_images/IMG-20260522-WA0070.jpg", aspect: "aspect-[4/3]" },
+  { id: 23, category: "Classroom", title: "Hands-on Art & Craft", src: "/SSV_images/IMG-20260526-WA0109.jpg", aspect: "aspect-[4/3]" },
+  // Play Area
+  { id: 4, category: "Play Area", title: "Indoor Play Zone", src: "/SSV_images/IMG-20260522-WA0014.jpg", aspect: "aspect-[4/3]" },
+  { id: 7, category: "Play Area", title: "Colorful Ball Pit", src: "/SSV_images/IMG-20260522-WA0012.jpg", aspect: "aspect-[4/3]" },
+  { id: 9, category: "Play Area", title: "Outdoor Playground", src: "/SSV_images/IMG-20260522-WA0024.jpg", aspect: "aspect-[4/3]" },
+  { id: 13, category: "Play Area", title: "Lego Wall Station", src: "/SSV_images/IMG-20260522-WA0060.jpg", aspect: "aspect-[4/3]" },
+  { id: 24, category: "Play Area", title: "Fun in the Ball Pit", src: "/SSV_images/IMG-20260526-WA0106.jpg", aspect: "aspect-[4/3]" },
+  // Activities
+  { id: 2, category: "Activities", title: "Children Playing Outdoors", src: "/SSV_images/IMG-20260522-WA0108.jpg", aspect: "aspect-[4/3]" },
+  { id: 6, category: "Activities", title: "Happy Kids Waving", src: "/SSV_images/IMG-20260526-WA0021.jpg", aspect: "aspect-[4/3]" },
+  { id: 12, category: "Activities", title: "Kids Playing on Swings", src: "/SSV_images/IMG-20260522-WA0114.jpg", aspect: "aspect-[4/3]" },
+  { id: 25, category: "Activities", title: "Kids Making Rangoli", src: "/SSV_images/IMG-20260526-WA0100.jpg", aspect: "aspect-[4/3]" },
+  { id: 26, category: "Activities", title: "Field Trip to Botanical Garden", src: "/SSV_images/IMG-20260526-WA0101.jpg", aspect: "aspect-[4/3]" },
+  { id: 27, category: "Activities", title: "Bannerghatta Park Visit", src: "/SSV_images/IMG-20260526-WA0102.jpg", aspect: "aspect-[4/3]" },
+  // Celebrations
+  { id: 5, category: "Celebrations", title: "Annual Day Group Photo", src: "/SSV_images/IMG-20260522-WA0054.jpg", aspect: "aspect-[4/3]" },
   { id: 18, category: "Celebrations", title: "Class Group Photo", src: "/SSV_images/IMG-20260522-WA0010.jpg", aspect: "aspect-[4/3]" },
-  { id: 19, category: "Classroom", title: "Montessori Learning Tools", src: "/SSV_images/IMG-20260522-WA0056.jpg", aspect: "aspect-[4/3]" },
-  { id: 20, category: "Activities", title: "Fun with Friends", src: "/SSV_images/IMG-20260526-WA0022.jpg", aspect: "aspect-[4/3]" },
-  { id: 21, category: "Play Area", title: "Kidney Tables & Chairs", src: "/SSV_images/IMG-20260522-WA0009.jpg", aspect: "aspect-[4/3]" },
-  { id: 22, category: "Classroom", title: "Decorated Classroom", src: "/SSV_images/IMG-20260522-WA0065.jpg", aspect: "aspect-[4/3]" },
+  { id: 28, category: "Celebrations", title: "Cultural Dance Performance", src: "/SSV_images/IMG-20260526-WA0096.jpg", aspect: "aspect-[4/3]" },
+  { id: 29, category: "Celebrations", title: "Classical Group Dance", src: "/SSV_images/IMG-20260526-WA0098.jpg", aspect: "aspect-[4/3]" },
+  { id: 30, category: "Celebrations", title: "Janmashtami Celebration", src: "/SSV_images/IMG-20260526-WA0104.jpg", aspect: "aspect-[4/3]" },
+  { id: 31, category: "Celebrations", title: "Flower Rangoli with Diya", src: "/SSV_images/IMG-20260526-WA0115.jpg", aspect: "aspect-[4/3]" },
+  { id: 32, category: "Celebrations", title: "Independence Day Celebration", src: "/SSV_images/IMG-20260526-WA0116.jpg", aspect: "aspect-[4/3]" },
+  { id: 33, category: "Celebrations", title: "Folk Dance on Stage", src: "/SSV_images/IMG-20260526-WA0119.jpg", aspect: "aspect-[4/3]" },
+  { id: 34, category: "Celebrations", title: "Children's Day Fancy Dress", src: "/SSV_images/IMG-20260526-WA0114.jpg", aspect: "aspect-[4/3]" },
+  { id: 35, category: "Celebrations", title: "Rhythms of Nature Event", src: "/SSV_images/IMG-20260526-WA0123.jpg", aspect: "aspect-[4/3]" },
 ];
 
 export default function GalleryPage() {
@@ -61,7 +72,7 @@ export default function GalleryPage() {
               <span className="gradient-text">Joy & Discovery</span>
             </h1>
             <p className="text-navy/60 text-lg leading-relaxed">
-              A glimpse into the vibrant life at Sairam Samskruthi — where every
+              A glimpse into the vibrant life at Sairam Sanskruthi — where every
               day is filled with laughter, learning, and little victories.
             </p>
           </FadeIn>
@@ -90,10 +101,10 @@ export default function GalleryPage() {
             ))}
           </FadeIn>
 
-          {/* Masonry Grid */}
+          {/* Grid */}
           <motion.div
             layout
-            className="columns-2 lg:columns-3 gap-3 sm:gap-4 space-y-3 sm:space-y-4"
+            className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((item, i) => (
@@ -104,12 +115,11 @@ export default function GalleryPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.4 }}
-                  className="break-inside-avoid"
                 >
                   <motion.div
                     whileHover={{ y: -5 }}
                     onClick={() => setLightboxIndex(filtered.indexOf(item))}
-                    className={`relative ${item.aspect} rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-shadow`}
+                    className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-shadow"
                   >
                     <Image
                       src={item.src}

@@ -9,7 +9,7 @@ const testimonials = [
     name: "Priya Sharma",
     role: "Parent of Ananya (UKG)",
     content:
-      "My daughter has completely transformed since joining Sairam Samskruthi. Her confidence, creativity, and love for learning have blossomed. The cultural activities are a wonderful bonus — she now performs slokas and dances at home!",
+      "My daughter has completely transformed since joining Sairam Sanskruthi. Her confidence, creativity, and love for learning have blossomed. The cultural activities are a wonderful bonus — she now performs slokas and dances at home!",
     avatar: "PS",
     color: "from-saffron to-magenta",
   },
@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     name: "Deepa Venkatesh",
-    role: "Parent of Kavya (Nursery)",
+    role: "Parent of Kavya (Play Group)",
     content:
       "As working parents, the day care facility is a blessing. We feel completely safe knowing Kavya is in such loving hands. The regular photo updates and parent meetings keep us connected to her progress.",
     avatar: "DV",
@@ -31,7 +31,7 @@ const testimonials = [
   },
   {
     name: "Suresh Reddy",
-    role: "Parent of Twins (Play School)",
+    role: "Parent of Twins (Nursery)",
     content:
       "Managing twins is challenging, but the teachers handle it beautifully. The school's blend of modern teaching methods with traditional values is exactly what we wanted for our children.",
     avatar: "SR",

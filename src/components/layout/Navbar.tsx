@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -37,19 +38,23 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-2 group">
               <motion.div
-                className="w-12 h-12 rounded-2xl bg-gradient-to-br from-saffron to-magenta flex items-center justify-center shadow-lg"
+                className="w-[72px] h-[72px] relative shrink-0"
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-white font-heading font-bold text-xl">
-                  S
-                </span>
+                <Image
+                  src="/SSV - logo.png"
+                  alt="Sairam Sanskruthi Vidhyalaya"
+                  fill
+                  className="object-contain"
+                  sizes="72px"
+                />
               </motion.div>
               <div className="hidden sm:block">
                 <h1 className="font-heading font-bold text-lg leading-tight text-navy">
-                  Sairam Samskruthi
+                  Sairam Sanskruthi
                 </h1>
                 <p className="text-xs text-navy/60 font-medium tracking-wide">
                   VIDHYALAYA

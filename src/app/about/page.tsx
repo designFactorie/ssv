@@ -61,7 +61,7 @@ export default function AboutPage() {
               <span className="gradient-text">Shaping Futures</span>
             </h1>
             <p className="text-navy/60 text-lg leading-relaxed">
-              Sairam Samskruthi Vidhyalaya was born from a simple belief: every child
+              Sairam Sanskruthi Vidhyalaya was born from a simple belief: every child
               deserves an education that honours their culture while preparing them for
               tomorrow. Located in the heart of Appa Garden, Bangalore, we&apos;ve been
               a second home to hundreds of families.
@@ -81,8 +81,8 @@ export default function AboutPage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden h-48 sm:h-64">
               <Image
-                src="/SSV_images/IMG-20260522-WA0104.jpg"
-                alt="Calendar learning board"
+                src="/SSV_images/IMG-20260526-WA0115.jpg"
+                alt="Flower rangoli with diya"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 33vw, 20vw"
@@ -90,8 +90,8 @@ export default function AboutPage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden h-48 sm:h-64">
               <Image
-                src="/SSV_images/IMG-20260526-WA0005.jpg"
-                alt="Teaching moment"
+                src="/SSV_images/IMG-20260526-WA0096.jpg"
+                alt="Cultural dance performance"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 33vw, 20vw"

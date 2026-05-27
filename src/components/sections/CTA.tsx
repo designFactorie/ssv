@@ -44,7 +44,7 @@ export default function CTA({ heading, description }: CTAProps) {
 
         <FadeIn delay={0.2}>
           <p className="text-white/80 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            {description ?? "Join the Sairam Samskruthi family. Schedule a visit to experience our vibrant campus, meet our teachers, and see why hundreds of parents trust us."}
+            {description ?? "Join the Sairam Sanskruthi family. Schedule a visit to experience our vibrant campus, meet our teachers, and see why hundreds of parents trust us."}
           </p>
         </FadeIn>
 

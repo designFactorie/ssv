@@ -6,10 +6,10 @@ import { FadeIn } from "@/components/animations/MotionWrapper";
 
 const showcaseImages = [
   { src: "/SSV_images/IMG-20260522-WA0109.jpg", alt: "School building exterior", span: "col-span-2 row-span-2" },
-  { src: "/SSV_images/IMG-20260522-WA0108.jpg", alt: "Children playing outdoors", span: "col-span-1 row-span-1" },
+  { src: "/SSV_images/IMG-20260526-WA0096.jpg", alt: "Cultural dance performance", span: "col-span-1 row-span-1" },
   { src: "/SSV_images/IMG-20260526-WA0021.jpg", alt: "Happy kids waving", span: "col-span-1 row-span-1" },
-  { src: "/SSV_images/IMG-20260522-WA0063.jpg", alt: "Colorful classroom", span: "col-span-1 row-span-1" },
-  { src: "/SSV_images/IMG-20260522-WA0010.jpg", alt: "Students & teachers", span: "col-span-1 row-span-1" },
+  { src: "/SSV_images/IMG-20260526-WA0100.jpg", alt: "Kids making rangoli", span: "col-span-1 row-span-1" },
+  { src: "/SSV_images/IMG-20260526-WA0101.jpg", alt: "Botanical garden field trip", span: "col-span-1 row-span-1" },
 ];
 
 export default function ImageShowcase() {
@@ -26,7 +26,7 @@ export default function ImageShowcase() {
           </h2>
           <p className="text-navy/60 text-lg max-w-2xl mx-auto">
             Colorful classrooms, vibrant play areas, and happy faces — this is
-            what a day at Sairam Samskruthi looks like.
+            what a day at Sairam Sanskruthi looks like.
           </p>
         </FadeIn>
 

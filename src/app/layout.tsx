@@ -17,16 +17,16 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sairam Samskruthi Vidhyalaya | Premium Kindergarten in Bangalore",
+  title: "Sairam Sanskruthi Vidhyalaya | Premium Kindergarten in Bangalore",
   description:
-    "Where play meets culture. A premium kindergarten in Appa Garden, Bangalore offering Nursery, Play School, Day Care, LKG & UKG with play-based learning and rich cultural values.",
+    "Where play meets culture. A premium kindergarten in Appa Garden, Bangalore offering Play Group, Nursery, LKG, UKG & Day Care with play-based learning and rich cultural values.",
   keywords: [
     "kindergarten bangalore",
-    "play school appa garden",
+    "play group appa garden",
     "nursery school bangalore",
     "day care bangalore",
     "LKG UKG bangalore",
-    "sairam samskruthi vidhyalaya",
+    "sairam sanskruthi vidhyalaya",
     "best kindergarten bangalore",
   ],
 };

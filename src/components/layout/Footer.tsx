@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/MotionWrapper";
@@ -13,8 +14,8 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   Programs: [
+    { label: "Play Group", href: "/programs#playgroup" },
     { label: "Nursery", href: "/programs#nursery" },
-    { label: "Play School", href: "/programs#playschool" },
     { label: "Day Care", href: "/programs#daycare" },
     { label: "LKG", href: "/programs#lkg" },
     { label: "UKG", href: "/programs#ukg" },
@@ -31,14 +32,18 @@ export default function Footer() {
           <FadeIn direction="up" delay={0}>
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-saffron to-magenta flex items-center justify-center">
-                  <span className="text-white font-heading font-bold text-xl">
-                    S
-                  </span>
+                <div className="w-16 h-16 relative shrink-0">
+                  <Image
+                    src="/SSV - logo.png"
+                    alt="Sairam Sanskruthi Vidhyalaya"
+                    fill
+                    className="object-contain"
+                    sizes="64px"
+                  />
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-lg leading-tight">
-                    Sairam Samskruthi
+                    Sairam Sanskruthi
                   </h3>
                   <p className="text-xs text-white/50 font-medium tracking-wider">
                     VIDHYALAYA
@@ -129,7 +134,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-sm">
-            &copy; {new Date().getFullYear()} Sairam Samskruthi Vidhyalaya. All
+            &copy; {new Date().getFullYear()} Sairam Sanskruthi Vidhyalaya. All
             rights reserved.
           </p>
           <p className="text-white/20 text-xs">

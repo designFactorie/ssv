@@ -9,12 +9,12 @@ import CTA from "@/components/sections/CTA";
 
 const programs = [
   {
-    id: "nursery",
-    title: "Nursery",
+    id: "playgroup",
+    title: "Play Group",
     age: "2 - 3 years",
     tagline: "First Steps into Wonder",
     description:
-      "A gentle, loving introduction to the world of learning. Our nursery program focuses on sensory exploration, basic motor skills, and building trust in a safe environment. Through songs, stories, and free play, your little one takes their first confident steps outside home.",
+      "A gentle, loving introduction to the world of learning. Our play group focuses on sensory exploration, basic motor skills, and building trust in a safe environment. Through songs, stories, and free play, your little one takes their first confident steps outside home.",
     highlights: [
       "Sensory play stations",
       "Circle time with songs & rhymes",
@@ -31,12 +31,13 @@ const programs = [
     image: "/SSV_images/IMG-20260522-WA0014.jpg",
   },
   {
-    id: "playschool",
-    title: "Play School",
+    id: "nursery",
+    title: "Nursery",
     age: "3 - 4 years",
     tagline: "Where Imagination Takes Flight",
+    concept: { sanskrit: "Eksha", meaning: "Desire to Learn" },
     description:
-      "Learning disguised as fun. Our play school program uses creative arts, music, dramatic play, and hands-on activities to build language skills, creativity, and early academic concepts. Every day is an adventure that sparks curiosity and joy.",
+      "Learning disguised as fun. Our nursery program uses creative arts, music, dramatic play, and hands-on activities to build language skills, creativity, and early academic concepts. Every day is an adventure that sparks curiosity and joy.",
     highlights: [
       "Art & creative expression",
       "Music and movement",
@@ -53,32 +54,11 @@ const programs = [
     image: "/SSV_images/IMG-20260522-WA0024.jpg",
   },
   {
-    id: "daycare",
-    title: "Day Care",
-    age: "2 - 6 years",
-    tagline: "A Home Away from Home",
-    description:
-      "Extended care designed for working parents. Our day care combines structured learning activities with free play, nutritious meals, and supervised rest time. Your child stays engaged, happy, and safe throughout the day.",
-    highlights: [
-      "Nutritious meals & snacks",
-      "Structured activity time",
-      "Supervised nap/rest time",
-      "Indoor & outdoor play",
-      "CCTV monitored",
-      "Flexible pick-up times",
-    ],
-    schedule: "Mon-Sat, 8:00 AM - 5:00 PM",
-    color: "from-teal to-teal-light",
-    bgColor: "bg-teal/5",
-    borderColor: "border-teal/20",
-    textColor: "text-teal",
-    image: "/SSV_images/IMG-20260522-WA0088.jpg",
-  },
-  {
     id: "lkg",
     title: "LKG",
     age: "4 - 5 years",
     tagline: "Building Strong Foundations",
+    concept: { sanskrit: "Medha", meaning: "Intelligence" },
     description:
       "A structured yet playful program that builds foundational literacy, numeracy, and social skills. Through interactive lessons, hands-on activities, and collaborative projects, children develop the confidence and skills needed for academic success.",
     highlights: [
@@ -101,6 +81,7 @@ const programs = [
     title: "UKG",
     age: "5 - 6 years",
     tagline: "Ready for the World",
+    concept: { sanskrit: "Prajna", meaning: "Wisdom" },
     description:
       "Our most advanced program prepares confident, curious learners for primary school. With a focus on reading fluency, mathematical thinking, and critical reasoning, children graduate ready to thrive in any school environment.",
     highlights: [
@@ -117,6 +98,28 @@ const programs = [
     borderColor: "border-green/20",
     textColor: "text-green",
     image: "/SSV_images/IMG-20260526-WA0005.jpg",
+  },
+  {
+    id: "daycare",
+    title: "Day Care",
+    age: "2 - 12 years",
+    tagline: "A Home Away from Home",
+    description:
+      "Extended care designed for working parents. Our day care combines structured learning activities with free play, nutritious meals, and supervised rest time. Your child stays engaged, happy, and safe throughout the day.",
+    highlights: [
+      "Nutritious meals & snacks",
+      "Structured activity time",
+      "Supervised nap/rest time",
+      "Indoor & outdoor play",
+      "CCTV monitored",
+      "Flexible pick-up times",
+    ],
+    schedule: "Mon-Sat, 8:00 AM - 5:00 PM",
+    color: "from-teal to-teal-light",
+    bgColor: "bg-teal/5",
+    borderColor: "border-teal/20",
+    textColor: "text-teal",
+    image: "/SSV_images/IMG-20260522-WA0088.jpg",
   },
 ];
 
@@ -193,6 +196,16 @@ export default function ProgramsPage() {
                         <p className="text-white/90 text-xl font-heading">
                           {program.tagline}
                         </p>
+                        {"concept" in program && program.concept && (
+                          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-xl w-fit">
+                            <span className="font-heading font-bold text-lg italic text-white">
+                              {program.concept.sanskrit}
+                            </span>
+                            <span className="text-white/70 text-sm">
+                              — {program.concept.meaning}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
 
