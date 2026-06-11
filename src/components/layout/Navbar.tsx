@@ -53,12 +53,12 @@ export default function Navbar() {
                 />
               </motion.div>
               <div>
-                <h1 className="font-heading font-bold text-sm sm:text-lg leading-tight text-navy">
+                <span className="font-heading font-bold text-sm sm:text-lg leading-tight text-navy block">
                   Sairam Sanskruthi
-                </h1>
-                <p className="text-[10px] sm:text-xs text-navy/60 font-medium tracking-wide">
+                </span>
+                <span className="text-[10px] sm:text-xs text-navy/60 font-medium tracking-wide block">
                   VIDHYALAYA
-                </p>
+                </span>
               </div>
             </Link>
 
