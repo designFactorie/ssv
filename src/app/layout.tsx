@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const BASE_URL = "https://ssv-site-nu.vercel.app";
+const BASE_URL = "https://www.sairamsanskruthividhyalaya.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     description:
       "Where play meets culture. Play-based learning and Indian cultural values in Appa Garden, Bangalore.",
     images: ["/SSV-building.jpeg"],
+  },
+  verification: {
+    google: "3i2D8q6vbY7UMvbXj-iHOS4a4vOmDaAh6OlZcteRH9w",
   },
   alternates: {
     canonical: BASE_URL,

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://ssv-site-nu.vercel.app/sitemap.xml",
+    sitemap: "https://www.sairamsanskruthividhyalaya.com/sitemap.xml",
   };
 }

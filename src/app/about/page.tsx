@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "About Us | Sairam Sanskruthi Vidhyalaya",
     description:
       "Learn about our mission, vision, and 15+ year journey of nurturing young minds in Bangalore.",
-    url: "https://ssv-site-nu.vercel.app/about",
+    url: "https://www.sairamsanskruthividhyalaya.com/about",
   },
 };
 

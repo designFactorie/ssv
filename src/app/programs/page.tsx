@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Programs | Sairam Sanskruthi Vidhyalaya",
     description:
       "Play Group, Nursery, LKG, UKG & Day Care programs with play-based learning and cultural values in Bangalore.",
-    url: "https://ssv-site-nu.vercel.app/programs",
+    url: "https://www.sairamsanskruthividhyalaya.com/programs",
   },
 };
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Book a School Visit | Sairam Sanskruthi Vidhyalaya",
     description:
       "Schedule a campus visit. Call +91 98765 43210 or fill out our enquiry form.",
-    url: "https://ssv-site-nu.vercel.app/contact",
+    url: "https://www.sairamsanskruthividhyalaya.com/contact",
   },
 };
 

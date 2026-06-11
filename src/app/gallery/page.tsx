@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Gallery | Sairam Sanskruthi Vidhyalaya",
     description:
       "Photos of our vibrant campus, classrooms, play areas, and celebrations in Bangalore.",
-    url: "https://ssv-site-nu.vercel.app/gallery",
+    url: "https://www.sairamsanskruthividhyalaya.com/gallery",
   },
 };
 
