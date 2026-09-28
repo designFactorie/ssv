@@ -64,14 +64,14 @@ export default function GalleryContent() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-magenta/10 text-magenta font-heading font-semibold text-sm rounded-full mb-6">
+            <span className="inline-block px-4 py-1.5 bg-magenta/10 text-magenta-ink font-heading font-semibold text-sm rounded-full mb-6">
               Gallery
             </span>
             <h1 className="font-heading text-5xl sm:text-6xl font-bold text-navy mb-6">
               Moments of{" "}
               <span className="gradient-text">Joy & Discovery</span>
             </h1>
-            <p className="text-navy/60 text-lg leading-relaxed">
+            <p className="text-navy/70 text-lg leading-relaxed">
               A glimpse into the vibrant life at Sairam Sanskruthi — where every
               day is filled with laughter, learning, and little victories.
             </p>
@@ -93,7 +93,7 @@ export default function GalleryContent() {
                 className={`px-5 py-2.5 min-h-[44px] rounded-full font-heading font-medium text-sm transition-all duration-300 ${
                   activeCategory === cat
                     ? "bg-gradient-to-r from-saffron to-magenta text-white shadow-lg shadow-saffron/20"
-                    : "bg-cream text-navy/60 hover:bg-cream-dark"
+                    : "bg-cream text-navy/70 hover:bg-cream-dark"
                 }`}
               >
                 {cat}
@@ -107,11 +107,11 @@ export default function GalleryContent() {
             className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
           >
             <AnimatePresence mode="popLayout">
-              {filtered.map((item, i) => (
+              {filtered.map((item) => (
                 <motion.div
                   key={item.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={false}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.4 }}
@@ -126,7 +126,7 @@ export default function GalleryContent() {
                       alt={item.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 1023px) 50vw, 33vw"
                     />
 
                     {/* Hover overlay */}

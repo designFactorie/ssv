@@ -17,14 +17,14 @@ export default function ImageShowcase() {
     <section className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 bg-teal/10 text-teal font-heading font-semibold text-sm rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-teal/10 text-teal-ink font-heading font-semibold text-sm rounded-full mb-4">
             Our Campus
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl font-bold text-navy mb-4">
             A Glimpse into Our{" "}
             <span className="gradient-text-teal">World</span>
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/70 text-lg max-w-2xl mx-auto">
             Colorful classrooms, vibrant play areas, and happy faces — this is
             what a day at Sairam Sanskruthi looks like.
           </p>
@@ -44,7 +44,8 @@ export default function ImageShowcase() {
                   alt={img.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+                  sizes={i === 0 ? "(max-width: 767px) calc(100vw - 32px), (max-width: 1279px) calc(50vw - 40px), 600px" : "(max-width: 767px) calc(50vw - 22px), (max-width: 1279px) calc(25vw - 24px), 292px"}
+                  quality={60}
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

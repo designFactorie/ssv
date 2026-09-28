@@ -52,14 +52,14 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <FadeIn className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-magenta/10 text-magenta font-heading font-semibold text-sm rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-magenta/10 text-magenta-ink font-heading font-semibold text-sm rounded-full mb-4">
             Testimonials
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl font-bold text-navy mb-4">
             Loved by{" "}
             <span className="gradient-text">Parents</span>
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/70 text-lg max-w-2xl mx-auto">
             Don&apos;t just take our word for it — hear what our community has to say.
           </p>
         </FadeIn>
@@ -69,7 +69,7 @@ export default function Testimonials() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
@@ -97,7 +97,7 @@ export default function Testimonials() {
                   <p className="font-heading font-semibold text-navy">
                     {testimonials[activeIndex].name}
                   </p>
-                  <p className="text-navy/50 text-sm">
+                  <p className="text-navy/70 text-sm">
                     {testimonials[activeIndex].role}
                   </p>
                 </div>

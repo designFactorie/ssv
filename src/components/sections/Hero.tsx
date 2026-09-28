@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FloatingShapes, Mandala } from "@/components/ui/ShapeDecorations";
+import { FloatingShapes } from "@/components/ui/ShapeDecorations";
+import { school } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -15,7 +16,8 @@ export default function Hero() {
         fill
         className="object-cover"
         sizes="100vw"
-        priority
+        preload
+        quality={60}
       />
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-navy/60" />
@@ -29,7 +31,7 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-saffron/20 shadow-sm mb-8"
@@ -43,7 +45,7 @@ export default function Hero() {
           {/* Main heading */}
           <motion.h1
             className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-6"
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
@@ -58,11 +60,14 @@ export default function Hero() {
             >
               Culture
             </motion.span>
+            <span className="block mt-6 text-xl sm:text-2xl md:text-3xl font-medium text-white leading-snug">
+              Preschool &amp; Kindergarten in {school.street}, {school.city}
+            </span>
           </motion.h1>
 
           {/* Squiggle decoration */}
           <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
+            initial={false}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex justify-center mb-8"
@@ -86,20 +91,20 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
             className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
             A premium kindergarten nurturing young minds through{" "}
             <span className="text-saffron-light font-semibold">play-based learning</span> and{" "}
-            <span className="text-purple-light font-semibold">rich cultural values</span> in
-            the heart of Bangalore.
+            <span className="text-purple-light font-semibold">rich cultural values</span> in{" "}
+            {school.street}, {school.city}.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.1 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -126,7 +131,7 @@ export default function Hero() {
 
           {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.4 }}
             className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6"
@@ -136,7 +141,7 @@ export default function Hero() {
               { number: "15+", label: "Years of Trust", color: "text-purple-light" },
               { number: "50+", label: "Trained Teachers", color: "text-teal-light" },
               { number: "100%", label: "Parent Satisfaction", color: "text-green-light" },
-            ].map((stat, i) => (
+            ].map((stat) => (
               <motion.div
                 key={stat.label}
                 whileHover={{ y: -5 }}

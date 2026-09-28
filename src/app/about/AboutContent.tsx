@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, FloatingElement } from "@/components/animations/MotionWrapper";
-import { Star, Mandala } from "@/components/ui/ShapeDecorations";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/MotionWrapper";
+import { Mandala } from "@/components/ui/ShapeDecorations";
 import CTA from "@/components/sections/CTA";
 
 const values = [
@@ -53,14 +53,14 @@ export default function AboutContent() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-saffron/10 text-saffron font-heading font-semibold text-sm rounded-full mb-6">
+            <span className="inline-block px-4 py-1.5 bg-saffron/10 text-saffron-ink font-heading font-semibold text-sm rounded-full mb-6">
               Our Story
             </span>
             <h1 className="font-heading text-5xl sm:text-6xl font-bold text-navy mb-6">
               Nurturing Minds,{" "}
               <span className="gradient-text">Shaping Futures</span>
             </h1>
-            <p className="text-navy/60 text-lg leading-relaxed">
+            <p className="text-navy/70 text-lg leading-relaxed">
               Sairam Sanskruthi Vidhyalaya was born from a simple belief: every child
               deserves an education that honours their culture while preparing them for
               tomorrow. Located in the heart of Appa Garden, Bangalore, we&apos;ve been
@@ -124,7 +124,7 @@ export default function AboutContent() {
                 <h2 className="font-heading text-3xl font-bold text-navy mb-4">
                   Our Mission
                 </h2>
-                <p className="text-navy/60 leading-relaxed text-lg">
+                <p className="text-navy/70 leading-relaxed text-lg">
                   To create a joyful, inclusive learning environment where young children
                   develop holistically through play-based education rooted in Indian
                   cultural values. We aim to spark curiosity, build confidence, and nurture
@@ -141,7 +141,7 @@ export default function AboutContent() {
                 <h2 className="font-heading text-3xl font-bold text-navy mb-4">
                   Our Vision
                 </h2>
-                <p className="text-navy/60 leading-relaxed text-lg">
+                <p className="text-navy/70 leading-relaxed text-lg">
                   To be Bangalore&apos;s most loved and trusted early learning institution —
                   where every graduate enters primary school as a confident, culturally
                   rooted, and curious learner ready to embrace the world with open arms
@@ -159,7 +159,7 @@ export default function AboutContent() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-teal/10 text-teal font-heading font-semibold text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-teal/10 text-teal-ink font-heading font-semibold text-sm rounded-full mb-4">
               Our Values
             </span>
             <h2 className="font-heading text-4xl sm:text-5xl font-bold text-navy mb-4">
@@ -178,7 +178,7 @@ export default function AboutContent() {
                   <h3 className="font-heading font-bold text-xl text-navy mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-navy/55 leading-relaxed">
+                  <p className="text-navy/70 leading-relaxed">
                     {value.description}
                   </p>
                 </motion.div>
@@ -192,7 +192,7 @@ export default function AboutContent() {
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-green/10 text-green font-heading font-semibold text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-green/10 text-green-ink font-heading font-semibold text-sm rounded-full mb-4">
               Our Journey
             </span>
             <h2 className="font-heading text-4xl sm:text-5xl font-bold text-navy">
@@ -219,13 +219,13 @@ export default function AboutContent() {
                 {/* Content */}
                 <div className={`ml-20 sm:ml-0 sm:w-1/2 ${i % 2 === 0 ? "sm:pr-16 sm:text-right" : "sm:pl-16"}`}>
                   <div className="bg-cream/50 rounded-2xl p-6 border border-saffron/10">
-                    <span className="inline-block px-3 py-1 bg-saffron/10 text-saffron font-heading font-bold text-sm rounded-full mb-2">
+                    <span className="inline-block px-3 py-1 bg-saffron/10 text-saffron-ink font-heading font-bold text-sm rounded-full mb-2">
                       {milestone.year}
                     </span>
                     <h3 className="font-heading font-bold text-lg text-navy mb-1">
                       {milestone.title}
                     </h3>
-                    <p className="text-navy/55 text-sm">{milestone.description}</p>
+                    <p className="text-navy/70 text-sm">{milestone.description}</p>
                   </div>
                 </div>
               </FadeIn>
