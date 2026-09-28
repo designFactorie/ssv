@@ -3,9 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/MotionWrapper";
+import { FadeIn } from "@/components/animations/MotionWrapper";
 import { Mandala } from "@/components/ui/ShapeDecorations";
 import CTA from "@/components/sections/CTA";
+import ProgramQuestions from "@/components/sections/ProgramQuestions";
 
 const programs = [
   {
@@ -27,7 +28,7 @@ const programs = [
     color: "from-saffron to-saffron-light",
     bgColor: "bg-saffron/5",
     borderColor: "border-saffron/20",
-    textColor: "text-saffron",
+    textColor: "text-saffron-ink",
     image: "/SSV_images/IMG-20260522-WA0014.jpg",
   },
   {
@@ -50,7 +51,7 @@ const programs = [
     color: "from-magenta to-magenta-light",
     bgColor: "bg-magenta/5",
     borderColor: "border-magenta/20",
-    textColor: "text-magenta",
+    textColor: "text-magenta-ink",
     image: "/SSV_images/IMG-20260522-WA0024.jpg",
   },
   {
@@ -96,7 +97,7 @@ const programs = [
     color: "from-green to-green-light",
     bgColor: "bg-green/5",
     borderColor: "border-green/20",
-    textColor: "text-green",
+    textColor: "text-green-ink",
     image: "/SSV_images/IMG-20260526-WA0005.jpg",
   },
   {
@@ -118,7 +119,7 @@ const programs = [
     color: "from-teal to-teal-light",
     bgColor: "bg-teal/5",
     borderColor: "border-teal/20",
-    textColor: "text-teal",
+    textColor: "text-teal-ink",
     image: "/SSV_images/IMG-20260522-WA0088.jpg",
   },
 ];
@@ -142,7 +143,7 @@ export default function ProgramsContent() {
               A Perfect Fit for{" "}
               <span className="gradient-text">Every Child</span>
             </h1>
-            <p className="text-navy/60 text-lg leading-relaxed">
+            <p className="text-navy/70 text-lg leading-relaxed">
               From their first day in nursery to their last day in UKG, we&apos;ve
               designed each program to match your child&apos;s developmental stage
               with the right balance of play, learning, and cultural enrichment.
@@ -170,6 +171,8 @@ export default function ProgramsContent() {
                         fill
                         className="object-cover"
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        preload={i === 0}
+                        quality={60}
                       />
                       {/* Gradient overlay */}
                       <div className={`absolute inset-0 bg-gradient-to-t ${program.color} opacity-70`} />
@@ -186,7 +189,7 @@ export default function ProgramsContent() {
                         transition={{ duration: 4, repeat: Infinity }}
                       />
 
-                      <div className="relative z-10 p-12 flex flex-col justify-end h-full">
+                      <div className="relative z-10 p-6 sm:p-12 flex flex-col justify-end h-full">
                         <span className="inline-block px-3 py-1 bg-white/20 text-white text-sm font-semibold rounded-full mb-4 w-fit">
                           {program.age}
                         </span>
@@ -210,25 +213,25 @@ export default function ProgramsContent() {
                     </div>
 
                     {/* Content side */}
-                    <div className="p-10 lg:p-12">
+                    <div className="p-6 sm:p-10 lg:p-12">
                       <p className="text-navy/65 leading-relaxed text-base mb-8">
                         {program.description}
                       </p>
 
-                      <h4 className={`font-heading font-semibold text-sm ${program.textColor} mb-4 uppercase tracking-wider`}>
+                      <h3 className={`font-heading font-semibold text-sm ${program.textColor} mb-4 uppercase tracking-wider`}>
                         Program Highlights
-                      </h4>
+                      </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                         {program.highlights.map((highlight) => (
                           <div key={highlight} className="flex items-center gap-3">
                             <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${program.color} shrink-0`} />
-                            <span className="text-navy/60 text-sm">{highlight}</span>
+                            <span className="text-navy/70 text-sm">{highlight}</span>
                           </div>
                         ))}
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                        <div className="flex items-center gap-2 text-navy/40 text-sm">
+                        <div className="flex items-center gap-2 text-navy/70 text-sm">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -252,6 +255,8 @@ export default function ProgramsContent() {
           </div>
         </div>
       </section>
+
+      <ProgramQuestions />
 
       <CTA
         heading={<>Find the Perfect<br />Program for Your Child</>}

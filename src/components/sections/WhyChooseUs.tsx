@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
             What Makes Us{" "}
             <span className="gradient-text">Special</span>
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/70 text-lg max-w-2xl mx-auto">
             We don&apos;t just teach — we inspire. Here&apos;s why families in Bangalore
             trust us with their most precious little ones.
           </p>
@@ -98,7 +98,7 @@ export default function WhyChooseUs() {
                 <h3 className="font-heading font-bold text-lg text-navy mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-navy/55 text-sm leading-relaxed">
+                <p className="text-navy/70 text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>

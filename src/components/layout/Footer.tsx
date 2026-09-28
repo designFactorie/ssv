@@ -1,5 +1,7 @@
 "use client";
 
+import { school } from "@/lib/site";
+
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -56,7 +58,7 @@ export default function Footer() {
               </p>
               <div className="flex gap-3">
                 <motion.a
-                  href="https://wa.me/919876543210"
+                  href={school.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
@@ -68,7 +70,7 @@ export default function Footer() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="tel:+919876543210"
+                  href={`tel:${school.phone}`}
                   aria-label="Phone"
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-saffron/20 transition-colors"
@@ -78,7 +80,7 @@ export default function Footer() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="mailto:info@sairamsanskruthi.com"
+                  href={`mailto:${school.email}`}
                   aria-label="Email"
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-saffron/20 transition-colors"
@@ -122,17 +124,17 @@ export default function Footer() {
               </h4>
               <div className="space-y-4 text-sm text-white/60">
                 <p className="flex items-start gap-3">
-                  <svg className="w-4 h-4 mt-0.5 shrink-0 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 mt-0.5 shrink-0 text-saffron-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  Appa Garden, Bangalore, Karnataka
+                  {school.street}, {school.city}, {school.region}
                 </p>
                 <p className="flex items-start gap-3">
-                  <svg className="w-4 h-4 mt-0.5 shrink-0 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 mt-0.5 shrink-0 text-saffron-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Mon - Sat: 8:00 AM - 5:00 PM
+                  {school.hours}
                 </p>
               </div>
             </div>

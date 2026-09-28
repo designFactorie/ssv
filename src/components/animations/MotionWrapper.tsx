@@ -12,27 +12,17 @@ interface MotionWrapperProps {
   once?: boolean;
 }
 
-const directionOffset = {
-  up: { y: 60, x: 0 },
-  down: { y: -60, x: 0 },
-  left: { x: 60, y: 0 },
-  right: { x: -60, y: 0 },
-};
-
 export function FadeIn({
   children,
   className,
   delay = 0,
-  direction = "up",
   duration = 0.6,
   once = true,
 }: MotionWrapperProps) {
-  const offset = directionOffset[direction];
-
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, ...offset }}
+      initial={false}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once, margin: "-50px" }}
       transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -52,7 +42,7 @@ export function ScaleIn({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={false}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once, margin: "-50px" }}
       transition={{ duration, delay, ease: "easeOut" }}
@@ -84,7 +74,7 @@ export function StaggerContainer({
     <motion.div
       className={className}
       variants={containerVariants}
-      initial="hidden"
+      initial="visible"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
     >

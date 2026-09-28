@@ -4,18 +4,22 @@
   --color-saffron: #FF6B35;
   --color-saffron-light: #FF8F5E;
   --color-saffron-dark: #E55A25;
+  --color-saffron-ink: #AD360B;
 
   --color-teal: #00B4D8;
   --color-teal-light: #48CAE4;
   --color-teal-dark: #0096B7;
+  --color-teal-ink: #006A80;
 
   --color-magenta: #E91E63;
   --color-magenta-light: #F06292;
   --color-magenta-dark: #C2185B;
+  --color-magenta-ink: #B4144D;
 
   --color-green: #4CAF50;
   --color-green-light: #81C784;
   --color-green-dark: #388E3C;
+  --color-green-ink: #256B29;
 
   --color-purple: #7B2FF7;
   --color-purple-light: #A66FFA;
@@ -40,6 +44,17 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {

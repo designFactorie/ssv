@@ -26,13 +26,13 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -100 }}
+        initial={false}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-white/90 backdrop-blur-lg shadow-lg shadow-saffron/5"
-            : "bg-transparent"
+            : "bg-white/95"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ export default function Navbar() {
                 <span className="font-heading font-bold text-sm sm:text-lg leading-tight text-navy block">
                   Sairam Sanskruthi
                 </span>
-                <span className="text-[10px] sm:text-xs text-navy/60 font-medium tracking-wide block">
+                <span className="text-[10px] sm:text-xs text-navy/70 font-medium tracking-wide block">
                   VIDHYALAYA
                 </span>
               </div>
@@ -91,6 +91,8 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden relative w-11 h-11 flex items-center justify-center"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               <div className="flex flex-col gap-1.5">
                 <motion.span
@@ -115,31 +117,32 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-24 px-6 md:hidden"
+            id="mobile-navigation"
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl overflow-y-auto pt-24 pb-6 px-6 md:hidden"
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={false}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-4 py-4 text-2xl font-heading font-semibold text-navy hover:text-saffron transition-colors border-b border-navy/5"
+                    className="block px-4 py-4 text-2xl font-heading font-semibold text-navy hover:text-saffron-ink transition-colors border-b border-navy/5"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 className="mt-6"

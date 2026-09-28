@@ -90,14 +90,14 @@ export default function ProgramsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <FadeIn className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-saffron/10 text-saffron font-heading font-semibold text-sm rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-saffron/10 text-saffron-ink font-heading font-semibold text-sm rounded-full mb-4">
             Our Programs
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl font-bold text-navy mb-4">
             A Program for Every{" "}
             <span className="gradient-text">Little Explorer</span>
           </h2>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+          <p className="text-navy/70 text-lg max-w-2xl mx-auto">
             From first steps to school-ready, we have the perfect nurturing
             environment for every stage of your child&apos;s early years.
           </p>
@@ -127,7 +127,7 @@ export default function ProgramsSection() {
                     <h3 className="font-heading font-bold text-xl text-navy group-hover:text-white transition-colors">
                       {program.title}
                     </h3>
-                    <span className="text-[13px] font-semibold px-2.5 py-1 rounded-full bg-white/80 text-navy/60 group-hover:bg-white/20 group-hover:text-white/80 transition-colors">
+                    <span className="text-[13px] font-semibold px-2.5 py-1 rounded-full bg-white/80 text-navy/70 group-hover:bg-white/20 group-hover:text-white/80 transition-colors">
                       {program.age}
                     </span>
                   </div>
@@ -137,17 +137,17 @@ export default function ProgramsSection() {
                       <span className="font-heading font-bold text-base italic text-navy/80 group-hover:text-white transition-colors">
                         {program.concept.sanskrit}
                       </span>
-                      <span className="text-xs text-navy/40 group-hover:text-white/60 transition-colors">
+                      <span className="text-xs text-navy/70 group-hover:text-white/60 transition-colors">
                         — {program.concept.meaning}
                       </span>
                     </div>
                   )}
 
-                  <p className="text-navy/60 text-sm leading-relaxed group-hover:text-white/80 transition-colors mb-6">
+                  <p className="text-navy/70 text-sm leading-relaxed group-hover:text-white/80 transition-colors mb-6">
                     {program.description}
                   </p>
 
-                  <div className="flex items-center gap-2 text-sm font-semibold text-navy/40 group-hover:text-white/90 transition-colors">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-navy/70 group-hover:text-white/90 transition-colors">
                     <span>Learn more</span>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

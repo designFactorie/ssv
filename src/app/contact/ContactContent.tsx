@@ -1,5 +1,8 @@
 "use client";
 
+import { school } from "@/lib/site";
+
+
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/MotionWrapper";
@@ -77,14 +80,14 @@ export default function ContactContent() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn className="max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-green/10 text-green font-heading font-semibold text-sm rounded-full mb-6">
+            <span className="inline-block px-4 py-1.5 bg-green/10 text-green-ink font-heading font-semibold text-sm rounded-full mb-6">
               Get in Touch
             </span>
             <h1 className="font-heading text-5xl sm:text-6xl font-bold text-navy mb-6">
               Book a{" "}
               <span className="gradient-text">School Visit</span>
             </h1>
-            <p className="text-navy/60 text-lg leading-relaxed">
+            <p className="text-navy/70 text-lg leading-relaxed">
               Come see our campus, meet our teachers, and experience the Sairam
               Sanskruthi difference firsthand. We&apos;d love to welcome you!
             </p>
@@ -113,14 +116,14 @@ export default function ContactContent() {
                     transition={{ delay: 0.2, type: "spring" }}
                     className="w-20 h-20 rounded-full bg-green/10 flex items-center justify-center mx-auto mb-6"
                   >
-                    <svg className="w-10 h-10 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10 text-green-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </motion.div>
                   <h3 className="font-heading text-2xl font-bold text-navy mb-3">
                     Thank You!
                   </h3>
-                  <p className="text-navy/60 mb-6">
+                  <p className="text-navy/70 mb-6">
                     We&apos;ve received your request. Our team will contact you within
                     24 hours to schedule your visit.
                   </p>
@@ -151,7 +154,7 @@ export default function ContactContent() {
                   <h2 className="font-heading text-2xl font-bold text-navy mb-2">
                     Schedule a Visit
                   </h2>
-                  <p className="text-navy/50 text-sm mb-8">
+                  <p className="text-navy/70 text-sm mb-8">
                     Fill out the form below and we&apos;ll get back to you within 24 hours.
                   </p>
 
@@ -316,32 +319,32 @@ export default function ContactContent() {
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-saffron/10 flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-saffron-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
                     <div>
                       <p className="font-medium text-navy text-sm">Address</p>
-                      <p className="text-navy/55 text-sm">
+                      <p className="text-navy/70 text-sm">
                         Sairam Sanskruthi Vidhyalaya,
                         <br />
-                        Appa Garden, Bangalore,
+                        {school.street}, {school.city},
                         <br />
-                        Karnataka, India
+                        {school.region}, {school.country}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-teal-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
                     <div>
                       <p className="font-medium text-navy text-sm">Phone</p>
-                      <p className="text-navy/55 text-sm">+91 98765 43210</p>
+                      <p className="text-navy/70 text-sm"><a href={`tel:${school.phone}`} className="underline underline-offset-4">{school.phoneDisplay}</a></p>
                     </div>
                   </div>
 
@@ -353,22 +356,22 @@ export default function ContactContent() {
                     </div>
                     <div>
                       <p className="font-medium text-navy text-sm">Email</p>
-                      <p className="text-navy/55 text-sm">
-                        info@sairamsanskruthi.com
+                      <p className="text-navy/70 text-sm">
+                        <a href={`mailto:${school.email}`} className="underline underline-offset-4">{school.email}</a>
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-green/10 flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-green-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
                       <p className="font-medium text-navy text-sm">Hours</p>
-                      <p className="text-navy/55 text-sm">
-                        Mon - Sat: 8:00 AM - 5:00 PM
+                      <p className="text-navy/70 text-sm">
+                        {school.hours}
                         <br />
                         Sunday: Closed
                       </p>
@@ -393,7 +396,7 @@ export default function ContactContent() {
 
               {/* WhatsApp CTA */}
               <motion.a
-                href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20admissions%20at%20Sairam%20Sanskruthi%20Vidhyalaya."
+                href={`${school.whatsapp}?text=${encodeURIComponent("Hi, I would like to know more about admissions at " + school.name + ".")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
@@ -410,7 +413,7 @@ export default function ContactContent() {
 
               {/* Phone CTA */}
               <motion.a
-                href="tel:+919876543210"
+                href={`tel:${school.phone}`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="block bg-gradient-to-r from-green to-teal rounded-2xl p-6 text-white text-center"
@@ -419,7 +422,7 @@ export default function ContactContent() {
                   Prefer to call?
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tap to call us directly at +91 98765 43210
+                  Tap to call us directly at {school.phoneDisplay}
                 </p>
               </motion.a>
             </FadeIn>
