@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+For the enquiry form's Google Sheets integration, follow [the SSV enquiry setup guide](docs/enquiry-setup.md). The form requires a deployed Apps Script and server environment variables before it can save live enquiries.
+
 First, run the development server:
 
 ```bash
