@@ -1,17 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/MotionWrapper";
 import { Mandala } from "@/components/ui/ShapeDecorations";
+import { PROGRAMS, normalizeEnquiry, fingerprint, getReceipt, submitEnquiry } from "@/lib/enquiry.mjs";
 
-const programOptions = [
-  "Play Group (2-3 years)",
-  "Nursery (3-4 years)",
-  "LKG (4-5 years)",
-  "UKG (5-6 years)",
-  "Day Care (2-12 years)",
-];
+const programOptions = PROGRAMS;
 
 export default function ContactContent() {
   const [formState, setFormState] = useState({
@@ -24,6 +19,10 @@ export default function ContactContent() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const busy = useRef(false);
+  const pendingReceipt = useRef<{ fingerprint: string; receipt: string } | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -31,24 +30,40 @@ export default function ContactContent() {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const lines = [
-      `*New Visit Request - Sairam Sanskruthi Vidhyalaya*`,
-      ``,
-      `*Parent:* ${formState.parentName}`,
-      `*Child:* ${formState.childName}`,
-      `*Age:* ${formState.childAge}`,
-      `*Phone:* ${formState.phone}`,
-      formState.email ? `*Email:* ${formState.email}` : "",
-      formState.program ? `*Program:* ${formState.program}` : "",
-      formState.message ? `*Message:* ${formState.message}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-    const waUrl = `https://wa.me/919876543210?text=${encodeURIComponent(lines)}`;
-    window.open(waUrl, "_blank");
-    setSubmitted(true);
+    if (busy.current) return;
+    setError("");
+    const data = normalizeEnquiry(formState);
+    if (!data) {
+      setError("Please check both names, enter an age above 0 and up to 12 years (for example, 3 or 2.5), and a 10-digit Indian phone number. If provided, check your email and program too.");
+      return;
+    }
+    busy.current = true;
+    setSubmitting(true);
+    try {
+      const key = fingerprint(data);
+      if (pendingReceipt.current?.fingerprint !== key) {
+        pendingReceipt.current = { fingerprint: key, receipt: await getReceipt(data) };
+      }
+      const result = await submitEnquiry(data, pendingReceipt.current.receipt);
+      if (result.ok) {
+        setSubmitted(true);
+      } else {
+        const messages: Record<string, string> = {
+          RATE_LIMIT: "A request from this phone number was recently received. Please wait a minute before sending another.",
+          CONFIG: "Online requests are temporarily unavailable. Please use the phone or WhatsApp contact option.",
+          VALIDATION: "Please check the details and try again.",
+          ORIGIN: "This page could not submit your request. Please reload the page and try again.",
+        };
+        setError(messages[result.code] || "We couldn’t confirm that your request was received. Your details are still here; please retry with the same details so we can check without duplicating your request.");
+      }
+    } catch {
+      setError("We couldn’t submit your request. Please retry, or use the phone or WhatsApp contact option.");
+    } finally {
+      busy.current = false;
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -85,6 +100,9 @@ export default function ContactContent() {
             <FadeIn direction="left" className="lg:col-span-3">
               {submitted ? (
                 <motion.div
+                  role="status"
+                  tabIndex={-1}
+                  ref={(node) => { node?.focus(); }}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="bg-green/5 border border-green/20 rounded-3xl p-12 text-center"
@@ -111,6 +129,8 @@ export default function ContactContent() {
                     whileTap={{ scale: 0.95 }}
                     onClick={() => {
                       setSubmitted(false);
+                      pendingReceipt.current = null;
+                      try { sessionStorage.removeItem('ssv-enquiry-receipt'); } catch { /* Optional storage. */ }
                       setFormState({
                         parentName: "",
                         childName: "",
@@ -127,7 +147,7 @@ export default function ContactContent() {
                   </motion.button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="bg-cream/30 rounded-3xl p-8 sm:p-10 border border-saffron/10">
+                <form onSubmit={handleSubmit} aria-busy={submitting} className="bg-cream/30 rounded-3xl p-8 sm:p-10 border border-saffron/10">
                   <h2 className="font-heading text-2xl font-bold text-navy mb-2">
                     Schedule a Visit
                   </h2>
@@ -135,6 +155,7 @@ export default function ContactContent() {
                     Fill out the form below and we&apos;ll get back to you within 24 hours.
                   </p>
 
+                  <fieldset disabled={submitting} className="min-w-0">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {/* Parent Name */}
                     <div>
@@ -145,6 +166,8 @@ export default function ContactContent() {
                         type="text"
                         id="parentName"
                         name="parentName"
+                        maxLength={120}
+                        autoComplete="name"
                         value={formState.parentName}
                         onChange={handleChange}
                         required
@@ -162,6 +185,7 @@ export default function ContactContent() {
                         type="text"
                         id="childName"
                         name="childName"
+                        maxLength={120}
                         value={formState.childName}
                         onChange={handleChange}
                         required
@@ -179,12 +203,15 @@ export default function ContactContent() {
                         type="text"
                         id="childAge"
                         name="childAge"
+                        maxLength={20}
+                        aria-describedby="age-help"
                         value={formState.childAge}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl bg-white border border-navy/10 text-navy placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-saffron/30 focus:border-saffron/50 transition-all"
                         placeholder="e.g., 3 years"
                       />
+                      <p id="age-help" className="mt-1 text-xs text-navy/70">Age in years, for example 3 or 2.5 (up to 12).</p>
                     </div>
 
                     {/* Phone */}
@@ -196,6 +223,8 @@ export default function ContactContent() {
                         type="tel"
                         id="phone"
                         name="phone"
+                        maxLength={25}
+                        autoComplete="tel"
                         value={formState.phone}
                         onChange={handleChange}
                         required
@@ -213,6 +242,8 @@ export default function ContactContent() {
                         type="email"
                         id="email"
                         name="email"
+                        maxLength={254}
+                        autoComplete="email"
                         value={formState.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-white border border-navy/10 text-navy placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-saffron/30 focus:border-saffron/50 transition-all"
@@ -250,6 +281,7 @@ export default function ContactContent() {
                     <textarea
                       id="message"
                       name="message"
+                      maxLength={3000}
                       value={formState.message}
                       onChange={handleChange}
                       rows={4}
@@ -257,14 +289,18 @@ export default function ContactContent() {
                       placeholder="Any specific questions or preferred visit time..."
                     />
                   </div>
+                  </fieldset>
+
+                  {error && <p role="alert" className="mt-4 text-sm text-red-700">{error}</p>}
 
                   <motion.button
                     type="submit"
+                    disabled={submitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="mt-6 w-full py-4 bg-gradient-to-r from-saffron to-magenta text-white font-heading font-bold text-lg rounded-2xl shadow-lg shadow-saffron/25 hover:shadow-saffron/40 transition-shadow"
                   >
-                    Request a Visit
+                    {submitting ? "Sending request…" : "Request a Visit"}
                   </motion.button>
                 </form>
               )}
